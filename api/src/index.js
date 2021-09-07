@@ -70,6 +70,7 @@ app.delete('/matricula/:id', async (req,resp) =>{
         resp.send({ erro: "erro delete matricula!!" })
     }
 })
+//rtestesteste
 
 
 app.listen(process.env.PORT,
