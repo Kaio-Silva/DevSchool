@@ -21,13 +21,13 @@ app.post('/matricula', async (req, resp) => {
         let alunos = req.body;
 
         let conferir = await db.tb_matricula.findOne({ where: { nm_aluno: alunos.nome } })
-        let (conferir != null)
+        if (conferir != null)
             resp.send({ erro: "usuario ja existe!" })
 
         let r = await db.tb_matricula.create({
             nm_aluno: alunos.nome,
             nr_chamda: alunos.chamada,
-            nm_curso: alunos.nm_curso,
+            nm_curso: alunos.curso,
             nm_turma: alunos.turma
         })
 
