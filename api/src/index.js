@@ -9,7 +9,7 @@ app.use(cors());
 app.get('/matricula', async (req, resp) => {
     try{
         let alunos = await db.tb_matricula.findAll();
-        
+
         resp.send(alunos);
     } catch (e) {
         resp.send({ erro: "Erro get sala!!" })
@@ -70,6 +70,8 @@ app.delete('/matricula/:id', async (req,resp) =>{
         resp.send({ erro: "erro delete matricula!!" })
     }
 })
+
+// kkkkkkkkkkkk
 
 
 app.listen(process.env.PORT,
