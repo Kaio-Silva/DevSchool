@@ -5,9 +5,11 @@ import cors from 'cors'
 const app = express();
 app.use(cors());
 
+
 app.get('/matricula', async (req, resp) => {
     try{
         let alunos = await db.tb_matricula.findAll();
+        
         resp.send(alunos);
     } catch (e) {
         resp.send({ erro: "Erro get sala!!" })
@@ -32,31 +34,40 @@ app.post('/matricula', async (req, resp) => {
         resp.send(r);
 
     } catch (e) {
-        resp.send({ erro: "Erro no post sala" })
+        resp.send({ erro: "Erro post sala" })
     }
 })
 
-app.post('/matricula/:id', async (req, resp) => {
+app.put('/matricula/:id', async (req, resp) => {
    try{
-        let id = req.params;
-        let nome = req.body.nome;
-        let chamada = req.body.chamada;
-        let curso = req.body.curso;
-        let turma = req.body.turma;
+        let id = req.params.id;
+        let alunos = req.body;
 
-        let r = await db.tb_matricula.uptade({
-            nm_aluno: nome,
-            nr_chamda: chamada,
-            nm_curso: curso,
-            nm_turma: turma
+        let r = await db.tb_matricula.update({
+            nm_aluno: alunos.nome,
+            nr_chamda: alunos.chamada,
+            nm_curso: alunos.curso,
+            nm_turma: alunos.turma
         },
         {
-            where: { id_matricula: req.params.id }
+            where: { id_matricula: id }
         })
 
         resp.sendStatus(200);
     } catch (e) {
-        resp.send({ erro: "erro post matricula!! "})
+        resp.send({ erro: "erro put matricula!! "})
+    }
+})
+
+app.delete('/matricula/:id', async (req,resp) =>{
+    try{
+        let id = req.params.id;
+
+        let r = await db.tb_matricula.destroy({ where: { id_matricula: id } })
+
+        resp.sendStatus(200);
+    } catch (e) {
+        resp.send({ erro: "erro delete matricula!!" })
     }
 })
 
