@@ -5,3 +5,4 @@
 
 
 npx sequelize-auto -h my01.winhost.com -d mysql_17753_nsf2021 -u nsf2021 -x nsf@2021 -e mysql -o models -l esm
+
