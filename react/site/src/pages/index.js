@@ -2,14 +2,13 @@ import React from "react";
 
 import { useState } from "react";
 
-import Botôes from "../components/botoes";
-import Barra from "../components/barra";
-import { Inputs } from "../components/inputs/styled.js";
 
+import { Barra, Inputs, Botoes } from '../components/outros/styled.js'
 import { Container } from "./styled";
+import Menu from '../components/menu'
+import Cabecalho from "../components/cabecalho-aluno/index.js";
 
 import Api from "../service/api";
-import { Botoes } from "../components/botoes/styled";
 
 const api = new Api();
 
@@ -17,60 +16,37 @@ const api = new Api();
 export default function conteudo() {
      return(
         <Container>
-            <div className="menu">
-                <div className="menu-cabecalho">
-                    <img alt="Logo DevSchool" src="/assets/images/Logo.png"/>
-                    <div className="Titulo-Menu"> <span>Dev</span>School </div>
-                </div>
-                <div className="Back-Menu"></div>
-                <div className="menu-itens">
-                    <div className="gerenciamento"> 
-                         Gerenciamento
-                         <div className="item-alunos"> Alunos </div> 
-                    </div>
-                </div>
-            </div>
+            <Menu />
             <div className ="alunos">
-                <div className="alunos-cabecalho">
-                    <div>
-                        <img alt="Logo DevSchool" src="/assets/images/Brunex.svg"/>
-                        <div className="alunos-notificacoes"> 3 </div>
-                        <div className="notificacao"> Olá, Bruno de Oliveira </div>
-                    </div>
-                    <div>
-                        <Botoes> <img alt="atualizar" src="/assets/images/Atualizar.png"/> </Botoes>
-                        <Botoes> <img alt="atualizar" src="/assets/images/Sair.png"/> </Botoes>
-                    </div>
-                </div>
-                <hr/>
+                <Cabecalho />
                 <div className="novo-aluno">
-                    <div>
+                    <div className="alinhando-titulo">
                         <Barra/>
                         <div className="Titulo"> Novo Aluno </div>
                     </div>
                     <div className="Alinhar-Aluno">
                         <div className="Alinhar-Inputs">
                             <label>
-                                Nome:
+                                <div className="nome"> Nome: </div>
                                 <Inputs/>
                             </label>
                             <label>
-                                Curso:
+                                <div> Chamada: </div> 
                                 <Inputs/>
                             </label>
                         </div>
                         <div className="Alinhar-Inputs">
                             <label>
-                                Chamada:
+                                <div> Curso: </div>
                                 <Inputs/>
                             </label>
                             <label>
-                                Turma:
+                                <div> Turma: </div>
                                 <Inputs/>
                             </label>
-                        </div> 
+                        </div>
+                        <button className="Botao-NovoAluno"> Cadastrar </button> 
                     </div>
-                    <button className="Botao-NovoAluno"> Cadastrar </button>
                 </div>
                 <div className="Alunos-Matriculados">
                     <div>

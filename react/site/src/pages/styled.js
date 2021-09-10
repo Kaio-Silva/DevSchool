@@ -3,36 +3,76 @@ import styled from "styled-components";
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    height: 100vh;
 
-    .menu{
-        background-color: #2B3031;
-        width: 17em;
-    }
-    .Back-Menu {
-        background-color: #262626;
-        height: 2.5em;
-    }
-    .menu-cabecalho{}
+    background-color: #F5F5F5;
 
-    .Titulo-Menu{
-        font-size: 2em;
+    .alunos{
+        width: 100vw;
     }
 
-    span{}
+    .novo-aluno {
+        background-color: white;
+        padding: 2em;
+        margin: 2em
+    }
 
-    .menu-itens{}
+    .alinhando-titulo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
-    .gerenciamento{}
+    .Titulo{
+        font-family: sans-serif;
+        font-size: 1.8em;
+        font-weight: 700;
+    }
 
-    .item-alunos{}
+    .Alinhar-Aluno{
+        display: flex;
+        flex-direction: row;
+    }
 
-    .alunos{}
+    .Alinhar-Inputs{
+        display: flex;
+        flex-direction: column;
 
-    .alunos-cabecalho{}
+        margin-top: 2em;
+    }
+
+    label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 0.9em;
+
+        margin: 0.5em;
+    }
+
+    label > div {
+        margin-right: 1em
+    }
+
+    .nome {
+        margin-left: 1.65em;
+    }
+
+    .Botao-NovoAluno{
+        display: flex;
+        align-self: flex-end;
+
+        background-color: #E911C6;
+        color: white;
         
-    .alunos-notificacoes{}
+        margin-left: 1em;
+        padding: 0.8em 2em;
+        
+        border-radius: 5em;
+        border: none;
+    }
 
-    .notificacao{}
 `
 
 export { Container }
