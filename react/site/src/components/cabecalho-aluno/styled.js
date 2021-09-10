@@ -35,12 +35,26 @@ const AlunosCabecalho = styled.div`
         display: flex;
         flex-direction: row;
 
-        margin: 0.5em 0.8em
+        margin: 0.5em 0.8em;
     }
 
     .alunos-notificacoes{
-    
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin-left: 2.5em;
+        width: 1.5em;
+
+        background-color: #E911C6;
+        border-radius: 50%;
+        border: 2px solid white;
+
+        font-family: sans-serif;
+        font-size: .8em;
+        color: white;
     }
+
+    
 
     .notificacao{
         font-family: sans-serif;
@@ -60,6 +74,18 @@ const AlunosCabecalho = styled.div`
         margin: 0px;
         border: 1px solid #D9D9D9;
     }
+    Botoes:hover{
+        cursor: pointer;
+    }
+
+    .button:hover{
+        cursor: pointer;
+    }
+
+    img {
+        cursor: pointer;
+    }
+
 `
 
 export { AlunosCabecalho }

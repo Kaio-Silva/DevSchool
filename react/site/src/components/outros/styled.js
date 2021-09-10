@@ -14,6 +14,7 @@ const Inputs = styled.input`
     border-color: #A8A8A8;
     width: 13em;
     height: 2.2em;
+    padding: .5em;
 `
 
 const Botoes = styled.button `
@@ -24,7 +25,8 @@ const Botoes = styled.button `
     border-radius: 50%;
     width: 3em;
     height: 3em;
-    border: none
+    border: none;
+
 `
 
 

@@ -16,6 +16,10 @@ const MenuContainer = styled.div`
         height: 7em;
     }
 
+    .menu-cabecalho > div, img, span{
+        cursor: pointer;
+    }
+
     .titulo-Menu{
         font-family: sans-serif;
         font-size: 1.5em;
@@ -49,6 +53,10 @@ const MenuContainer = styled.div`
         color: white;
 
         height: 4em;
+    }
+
+    .gerenciamento{
+        cursor: pointer;
     }
 
     .item-alunos{

@@ -28,51 +28,82 @@ export default function conteudo() {
                         <div className="Alinhar-Inputs">
                             <label>
                                 <div className="nome"> Nome: </div>
-                                <Inputs/>
+                                <Inputs className="input"/>
                             </label>
                             <label>
                                 <div> Chamada: </div> 
-                                <Inputs/>
+                                <Inputs className="input"/>
                             </label>
                         </div>
                         <div className="Alinhar-Inputs">
                             <label>
                                 <div> Curso: </div>
-                                <Inputs/>
+                                <Inputs className="input"/>
                             </label>
                             <label>
                                 <div> Turma: </div>
-                                <Inputs/>
+                                <Inputs className="input"/>
                             </label>
                         </div>
                         <button className="Botao-NovoAluno"> Cadastrar </button> 
                     </div>
                 </div>
                 <div className="Alunos-Matriculados">
-                    <div>
+                    <div className="alinhando-matricula">
                         <Barra/>
                         <div className="Titulo"> Alunos Matriculados </div>
                     </div>
-                    <div className="Tabela">
-                        <div className="Cabecalho-Tabela">
-                            <div className="Informacoes-Cabecalho">ID</div>
-                            <div className="Informacoes-Cabecalho">Nome</div>
-                            <div className="Informacoes-Cabecalho">Chamada</div>
-                            <div className="Informacoes-Cabecalho">Turma</div>
-                            <div className="Informacoes-Cabecalho">Curso</div>
-                        </div>
-                        <div className="Conteudo-Tabela">
-                            <div className="Registro-Tabela">
-                                <div className="Informacoes-Tabela">1</div>
-                                <div className="Informacoes-Tabela">Fulano da Silva Salro</div>
-                                <div className="Informacoes-Tabela">14</div>
-                                <div className="Informacoes-Tabela">InfoX</div>
-                                <div className="Informacoes-Tabela">Informatica</div>
-                                <Botoes> <img alt="atualizar" src="/assets/images/editar.svg"/>  </Botoes>
-                                <Botoes> <img alt="atualizar" src="/assets/images/delete.svg"/>  </Botoes>  
-                            </div>
-                        </div>
-                    </div>
+                    <table className="Tabela">
+                        <thead>
+                            <tr>
+                                <th className="Informacoes-Cabecalho">ID</th>
+                                <th className="Informacoes-Cabecalho">Nome</th>
+                                <th className="Informacoes-Cabecalho">Chamada</th>
+                                <th className="Informacoes-Cabecalho">Turma</th>
+                                <th className="Informacoes-Cabecalho">Curso</th>
+                                <th className="coluna-acao"></th>
+                                <th className="coluna-acao"></th>
+                            </tr>
+                        </thead>
+                        <tbody className="Conteudo-Tabela">
+                            <tr className="Registro-Tabela">
+                                <td className="Informacoes-Tabela">1 </td>
+                                <td className="Informacoes-Tabela">Fulano da Silva Salro </td>
+                                <td className="Informacoes-Tabela">14 </td>
+                                <td className="Informacoes-Tabela">InfoX </td>
+                                <td className="Informacoes-Tabela">Informatica </td>
+                                <td> <button className="button-edit"> <img alt="edit" src="/assets/images/editar.svg"/>  </button> </td>
+                                <td> <button className="button-remover"> <img alt="delete" src="/assets/images/delete.svg"/>  </button> </td>
+                            </tr>
+                            <tr className="Registro-Tabela">
+                                <td className="Informacoes-Tabela">1 </td>
+                                <td className="Informacoes-Tabela">Fulano da Silva Salro </td>
+                                <td className="Informacoes-Tabela">14 </td>
+                                <td className="Informacoes-Tabela">InfoX </td>
+                                <td className="Informacoes-Tabela">Informatica </td>
+                                <td> <button className="button-edit"> <img alt="edit" src="/assets/images/editar.svg"/>  </button> </td>
+                                <td> <button className="button-remover"> <img alt="delete" src="/assets/images/delete.svg"/>  </button> </td>
+                            </tr>
+                            <tr className="Registro-Tabela">
+                                <td className="Informacoes-Tabela">1 </td>
+                                <td className="Informacoes-Tabela">Fulano da Silva Salro </td>
+                                <td className="Informacoes-Tabela">14 </td>
+                                <td className="Informacoes-Tabela">InfoX </td>
+                                <td className="Informacoes-Tabela">Informatica </td>
+                                <td> <button className="button-edit"> <img alt="edit" src="/assets/images/editar.svg"/>  </button> </td>
+                                <td> <button className="button-remover"> <img alt="delete" src="/assets/images/delete.svg"/>  </button> </td>
+                            </tr>
+                            <tr className="Registro-Tabela">
+                                <td className="Informacoes-Tabela">1 </td>
+                                <td className="Informacoes-Tabela">Fulano da Silva Salro </td>
+                                <td className="Informacoes-Tabela">14 </td>
+                                <td className="Informacoes-Tabela">InfoX </td>
+                                <td className="Informacoes-Tabela">Informatica </td>
+                                <td> <button className="button-edit"> <img alt="edit" src="/assets/images/editar.svg"/>  </button> </td>
+                                <td> <button className="button-remover"> <img alt="delete" src="/assets/images/delete.svg"/>  </button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </Container>   

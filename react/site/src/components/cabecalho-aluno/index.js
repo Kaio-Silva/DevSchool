@@ -15,8 +15,8 @@ export default function cabecalho(){
                     <div className="notificacao"> Olá, Bruno de Oliveira </div>
                 </div>
                 <div className="botoes-cabecalho">
-                    <Botoes> <img alt="atualizar" src="/assets/images/Atualizar.png"/> </Botoes>
-                    <Botoes> <img alt="atualizar" src="/assets/images/Sair.png"/> </Botoes>
+                    <Botoes> <img className="button" alt="atualizar" src="/assets/images/Atualizar.png"/> </Botoes>
+                    <Botoes> <img className="button" alt="atualizar" src="/assets/images/Sair.png"/> </Botoes>
                 </div>
             </div>    
             <hr/>
