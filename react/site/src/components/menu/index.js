@@ -1,4 +1,6 @@
+import Api from '../../service/api.js'
 import { MenuContainer } from './styled.js'
+
 
 export default function Menu(){
     return(

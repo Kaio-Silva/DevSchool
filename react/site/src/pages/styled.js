@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
 
     background-color: #F5F5F5;
 
@@ -141,8 +141,26 @@ const Container = styled.div`
         cursor: pointer;
     }
 
+    button > img:hover{
+        cursor: pointer;
+    }
+
     input{
         cursor: pointer;
+    }
+
+    .Registro-Tabela{
+        background-color: #f5f5f5;
+    }
+
+    .coluna-acao > button{
+        visibility: hidden;
+    }
+
+    tr:hover{
+        .coluna-acao > button {
+            visibility: visible;
+        }
     }
 
 `

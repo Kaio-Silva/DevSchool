@@ -7,6 +7,11 @@ const MenuContainer = styled.div`
     background-color: #2B3031;
     width: 25em;
 
+    height: 100vh;
+
+    position: sticky;
+    top: 0px;
+
     .menu-cabecalho{
         display: flex;
         flex-direction: row;
