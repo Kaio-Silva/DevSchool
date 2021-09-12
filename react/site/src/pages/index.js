@@ -13,6 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingBar from 'react-top-loading-bar';
 
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
+
 import Api from "../service/api.js";
 const api = new Api();
 
@@ -38,7 +41,7 @@ export default function Conteudo() {
         if(idAlterando === 0){
             let r = await api.inserir(nome, chamada, curso, turma);
             if(r.erro)
-                toast.error('Erro na inserção do aluno');
+                toast.error(r.erro);
             else    
                 toast.success('🚀 aluno inserido !!');    
         } else {
@@ -62,14 +65,31 @@ export default function Conteudo() {
         setIdAlterando(0);
     }
 
-    async function remover(id){
-        loading.current.continuousStart();
+    async function remover(id){    
+        confirmAlert({
+            title: 'Remover Aluno',
+            message: `Tem certeza que deseja remover o aluno ${id}`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        let r = await api.remover(id);
 
-        await api.remover(id);
-        toast.success('🚀 aluno removido !!')
-
-        loading.current.complete();
-        listar();
+                        if(r.erro)
+                            toast.error(r.erro)
+                        else {
+                            toast.success('🚀 aluno removido !!')  
+                            listar();  
+                        }    
+                    } 
+                    
+                },
+                {
+                    label: 'Não',
+                    
+                }
+            ]
+        }) 
     }
 
     async function alterar(item){
@@ -141,7 +161,7 @@ export default function Conteudo() {
                             {alunos.map((item, i) =>
                                 <tr className={ i % 2 == 0 ? "Registro-Tabela" : ""}>
                                     <td className="Informacoes-Tabela"> {item.id_matricula} </td>
-                                    <td className="Informacoes-Tabela"> {item.nm_aluno} </td>
+                                    <td className="Informacoes-Tabela" title={item.nm_aluno}> {item.nm_aluno != null && item.nm_aluno.length >= 25 ? item.nm_aluno.substr(0, 25) + '...' : item.nm_aluno} </td>
                                     <td className="Informacoes-Tabela"> {item.nr_chamada} </td>
                                     <td className="Informacoes-Tabela"> {item.nm_turma} </td>
                                     <td className="Informacoes-Tabela"> {item.nm_curso} </td>

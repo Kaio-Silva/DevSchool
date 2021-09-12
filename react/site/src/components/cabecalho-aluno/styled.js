@@ -26,6 +26,12 @@ const AlunosCabecalho = styled.div`
         align-items: center;
     }
 
+    .image-user{
+        height: 3em;
+        width: 3em;
+        border-radius: 50%;
+    }
+
     .botoes-cabecalho{
         display: flex;
         flex-direction: row;

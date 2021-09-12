@@ -15,7 +15,7 @@ export default function Menu(){
                     Gerenciamento
                     <img src="/assets/images/seta.png"/>
                 </div>
-                <div className="item-alunos"> <div> Alunos </div> </div>
+                <div className="item-alunos"> Alunos </div>
             </div>
         </MenuContainer>
     )

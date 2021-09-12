@@ -24,6 +24,17 @@ app.post('/matricula', async (req, resp) => {
         let conferir = await db.tb_matricula.findOne({ where: { nr_chamada: chamada, nm_turma: turma }})
         if(conferir != null)
             return resp.send({ erro: "Esse aluno ja existe!!" }) 
+            
+        if(nome == "" || curso == "" || turma == "")
+            return resp.send({ erro: "É obrigatorio preencher os campos !!" })
+
+        if (nome.length < 4 || curso.length < 4 || turma.length < 4)
+            return resp.send({ erro: "É obrigatorio no minimo 4 caracteres !!" })
+
+
+        if(chamada < 1)
+            return resp.send({ erro: "Chamada invalida !!" })    
+
 
         let r = await db.tb_matricula.create({
             nm_aluno: nome,
@@ -45,7 +56,7 @@ app.put('/matricula/:id', async (req, resp) => {
 
         let r = await db.tb_matricula.update({
             nm_aluno: nome,
-            nr_chamda: chamada,
+            nr_chamada: chamada,
             nm_curso: curso,
             nm_turma: turma
         },

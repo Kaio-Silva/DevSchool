@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 const MenuContainer = styled.div`
 
     background-color: #2B3031;
@@ -77,11 +76,9 @@ const MenuContainer = styled.div`
         color: black;
 
         height: 3em;
+        padding-left: 3em;
     }
 
-    .item-alunos > div{
-        margin-left: 3.2em;
-    }
 `
 
 export { MenuContainer }

@@ -18,10 +18,10 @@ export default function cabecalho(){
             <div className="alinhando-container">
                 <div className="alinhando-usuario">
                     <div className="alinhando-notificacao">
-                        <img alt="Logo DevSchool" src="/assets/images/Brunex.svg"/>
+                        <img className="image-user" alt="Logo DevSchool" src="/assets/images/neo.png"/>
                         <div className="alunos-notificacoes"> 3 </div>
                     </div>    
-                    <div className="notificacao"> Olá, Bruno de Oliveira </div>
+                    <div className="notificacao"> Olá, Luigi da Silva Coelho </div>
                 </div>
                 <div className="botoes-cabecalho">
                     <Botoes onClick={emBreve}> <img className="button" alt="atualizar" src="/assets/images/Atualizar.png"/> </Botoes>
