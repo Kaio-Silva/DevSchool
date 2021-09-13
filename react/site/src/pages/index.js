@@ -73,6 +73,8 @@ export default function Conteudo() {
                 {
                     label: 'Sim',
                     onClick: async () => {
+                        loading.current.continuousStart();
+
                         let r = await api.remover(id);
 
                         if(r.erro)
@@ -80,7 +82,9 @@ export default function Conteudo() {
                         else {
                             toast.success('🚀 aluno removido !!')  
                             listar();  
-                        }    
+                        }
+                        
+                        loading.current.complete();
                     } 
                     
                 },

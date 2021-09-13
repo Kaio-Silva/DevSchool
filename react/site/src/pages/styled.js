@@ -146,7 +146,7 @@ const Container = styled.div`
     }
 
     input{
-        cursor: pointer;
+        cursor: text;
     }
 
     .Registro-Tabela{

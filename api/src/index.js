@@ -28,6 +28,9 @@ app.post('/matricula', async (req, resp) => {
         if(nome == "" || curso == "" || turma == "")
             return resp.send({ erro: "É obrigatorio preencher os campos !!" })
 
+        if(isNaN(nome) == false|| isNaN(turma) == false || isNaN(curso) == false)
+            return resp.send({ erro: "Não é possivel passar números em campos do tipo texto !!" })    
+
         if (nome.length < 4 || curso.length < 4 || turma.length < 4)
             return resp.send({ erro: "É obrigatorio no minimo 4 caracteres !!" })
 
